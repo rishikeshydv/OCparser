@@ -1,0 +1,6 @@
+# dune init proj ocparser
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Shared cache location: /Users/rishikeshyadav/.cache/dune/db
+# Workspace root: /Users/rishikeshyadav/Desktop/OCparser/ocparser
+# Auto-detected concurrency: 8
