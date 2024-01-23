@@ -40,3 +40,10 @@ rule read =
   | _ { raise (SyntaxError ("Unexpected char: " ^ Lexing.lexeme lexbuf)) }
   | eof      { EOF }
 
+and read_string buf =
+  parse
+  | '"'       { STRING (Buffer.contents buf) }
+  | [^ '"' '\\']+
+    { Buffer.add_string buf (Lexing.lexeme lexbuf);
+      read_string buf lexbuf
+    }
