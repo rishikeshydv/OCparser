@@ -17,6 +17,7 @@
 
 
 %start <Json.value option> prog
+%%
 prog:
   | v = value { Some v }
   | EOF       { None   } ;
@@ -40,4 +41,3 @@ obj_field:
 list_fields:
     vl = separated_list(COMMA, value)         { vl } ;
 
-%%
